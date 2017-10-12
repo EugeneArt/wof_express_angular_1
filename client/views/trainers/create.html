@@ -1,0 +1,52 @@
+<div>
+    <h1>Тренеры: добавить тренера</h1>
+    <form role="form" name="myForm">
+        <div class= "form-group" ng-class="{error: myForm.trainer_name.$invalid}">
+            <label> ФИО </label>
+            <div>
+                <input name="trainer_name" ng-model="trainer.trainer_name" type="text" class= "form-control" placeholder="ФИО" required/>
+                <span ng-show="myForm.trainer_name.$dirty && myForm.trainer_name.$invalid" class="help-inline">ФИО обязательны для заполнения</span>
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.trainer_tagline.$invalid}">
+            <label> Слоган </label>
+            <div>
+                <textarea name="trainer_tagline" ng-model="trainer.trainer_tagline"  class= "form-control" placeholder= "Слоган" rows="3"></textarea>
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.trainer_achievements.$invalid}">
+            <label> Достижения </label>
+            <div>
+                <textarea name="trainer_achievements" ng-model="trainer.trainer_achievements"  class= "form-control" placeholder= "Достижения" rows="6"></textarea>
+            </div>
+        </div>
+        <p>
+            <input
+                    type="file"
+                    name="file"
+                    ngf-select
+                    ng-model="file"
+                    name="file"
+                    ngf-pattern="'image/*'"
+                    accept="image/*"
+                    ngf-max-size="20MB"
+            />
+        </p>
+
+        <p>
+            <img style="width:250px;" ngf-thumbnail="file"/>
+            <i ng-show="form.file.$error.required">*required</i><br>
+            <i ng-show="form.file.$error.maxSize">File too large</i>
+        </p>
+
+        <p>{{form.progress}}</p>
+
+        <a href="#/trainers/index" class="btn btn-default">Отмена</a>
+        <button ng-click="createTrainer(trainer)"
+                ng-disabled="myForm.$invalid"
+                type="submit" class="btn btn-default">Выполнить</button>
+    </form>
+
+
+
+</div>

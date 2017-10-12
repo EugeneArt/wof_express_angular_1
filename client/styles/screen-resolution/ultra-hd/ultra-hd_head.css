@@ -1,0 +1,72 @@
+@media (min-width: 2560px) {
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: white;
+    z-index: 1;
+  }
+  .navbar {
+    width: 100%;
+    min-height: 250px;
+    margin: 0;
+    font-size: 3rem;
+  }
+  .navbar .navbar-header {
+    width: 100%;
+    height: 250px;
+  }
+  .navbar .navbar-header .navbar-brand {
+    margin: 0 50px;
+  }
+  .navbar .navbar-header .navbar-brand svg {
+    width: 200px;
+    height: 250px;
+  }
+  .navbar .navbar-header .banner {
+    display: inline-block;
+    margin: 10px 0;
+  }
+  .navbar .navbar-header .banner img {
+    max-width: 2300px;
+    height: 220px;
+  }
+  .navbar .navbar-nav {
+    margin: 35px 0;
+  }
+  .navbar .comment {
+    position: absolute;
+    top: 60px;
+    right: 50px;
+  }
+  .navbar .comment .btn-primary {
+    border: none;
+    border-radius: 8px;
+  }
+  .navbar .comment .btn-comment {
+    width: 500px;
+    height: 120px;
+    border-radius: 100px;
+    background: #eb964b;
+    font-size: 4rem;
+    line-height: 9rem;
+  }
+  .navbar .search {
+    position: absolute;
+    top: 60px;
+    right: 50px;
+    right: 600px;
+  }
+  .navbar .search .btn-primary {
+    border: none;
+    border-radius: 8px;
+  }
+  .navbar .search .btn-comment {
+    width: 500px;
+    height: 120px;
+    border-radius: 100px;
+    background: #eb964b;
+    font-size: 4rem;
+    line-height: 9rem;
+  }
+}

@@ -1,0 +1,44 @@
+@media (min-width: 992px) {
+  main .content .wrapper {
+    min-height: 400px;
+  }
+  main .content .wrapper .comment {
+    margin: 0 auto;
+  }
+  main .content .wrapper .comment form .form-group .form-control {
+    padding-left: 20px;
+  }
+  main .content .wrapper .comment form .form-group label {
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: 400;
+  }
+  main .content .wrapper .comment form .form-group label.err {
+    text-decoration: underline dotted red;
+  }
+  main .content .wrapper .comment form .form-group label.succ {
+    text-decoration: underline dotted green;
+  }
+  main .content .wrapper .comment form .form-group input {
+    height: 60px;
+    font-size: 2rem;
+    border-radius: 30px;
+  }
+  main .content .wrapper .comment form .form-group textarea {
+    font-size: 2rem;
+    border-radius: 30px;
+  }
+  main .content .wrapper .comment .comment-btns {
+    display: inline-block;
+  }
+  main .content .wrapper .comment .comment-btns .btn {
+    padding: 10px 50px;
+    margin: 10px 5px;
+    background: #eb964b;
+    border: 2px solid white;
+    border-radius: 80px;
+    font-style: italic;
+    color: white;
+    font-size: 2rem;
+  }
+}

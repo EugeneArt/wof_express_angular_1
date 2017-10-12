@@ -1,0 +1,32 @@
+@media (min-width: 992px) {
+  main .content {
+    padding: 10px 40px;
+  }
+  main .content .wrapper {
+    min-height: 400px;
+  }
+  main .content .wrapper .trainer-name {
+    margin-left: 20px;
+    font-size: 2.5rem;
+  }
+  main .content .wrapper .trainer-img {
+    margin: 10px 0;
+  }
+  main .content .wrapper .trainer-img img {
+    width: 340px;
+    border-radius: 25px;
+  }
+  main .content .wrapper .trainer-tagline {
+    margin: 0 20px;
+    padding: 30px;
+    font-style: italic;
+  }
+  main .content .wrapper .trainer-achievement {
+    padding: 20px 30px;
+    font-size: 1.5rem;
+    border-radius: 25px;
+  }
+  main .content .wrapper .trainer-achievement h4 {
+    font-size: 2rem;
+  }
+}

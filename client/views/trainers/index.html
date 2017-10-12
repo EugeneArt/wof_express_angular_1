@@ -1,0 +1,36 @@
+<div>
+    <h1>Редактировать тренеров</h1>
+    <p>
+        <a class="btn btn-primary" href="#/trainers/create">
+            <i class="glyphicon glyphicon-plus"></i> Добавить тренера
+        </a>
+    </p>
+
+    <div ng-show="trainers.length > 0">
+        <table class="table">
+            <thead>
+            <th>Тренер</th>
+            <th>Достижения</th>
+            <th>Слоган</th>
+            <th>Фото</th>
+            <th style="width:200px;">Редактировать/Удалить</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="trainer in trainers">
+                <td>{{::trainer.trainer_name}}</td>
+                <td>{{::trainer.trainer_achievements}}</td>
+                <td>{{::trainer.trainer_tagline}}</td>
+                <td><img src="./uploads/{{::trainer.trainer_img}}" alt="{{::trainer.trainer_name}}" width="150px"></td>
+                <td>
+                    <a class="btn btn-primary btn-xs" href="#/trainers/update/{{::trainer.id}}">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </a>
+                    <a class="btn btn-danger btn-xs" ng-click="deleteTrainer(trainer.id)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

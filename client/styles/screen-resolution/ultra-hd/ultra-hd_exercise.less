@@ -1,0 +1,68 @@
+@media (min-width: 2560px) {
+  main {
+    .content {
+      border-radius: 30px;
+      padding-bottom: 60px;
+      .exercise_title {
+        font-size: 12rem;
+        margin: 45px 0 0 45px;
+      }
+      .exercise-wrapper {
+        min-height: 1600px;
+        background: white;
+        padding: 80px;
+        margin-top: 50px;
+        border-radius: 100px;
+        .exercise-slider{
+          .carousel {
+            min-height: 900px;
+            .carousel-inner {
+              .text-center {
+                img {
+                  min-height: 900px;
+                  max-height: 900px;
+                }
+              }
+            }
+            .carousel-indicators li{
+              width: 40px;
+              height: 40px;
+              margin: 5px;
+              border: 2px solid #eb964b;
+              &.active {
+                background: #eb964b;
+              }
+            }
+            .carousel-control {
+              background: rgba(255,119,1,0.3);
+              .glyphicon{
+                color: #337ab7;
+                font-size: 3rem;
+              }
+              &.right {
+                border-radius: 0 40px 40px 0;
+              }
+              &.left {
+                border-radius: 40px 0 0 40px;
+              }
+            }
+          }
+        }
+        .exercise-video {
+          width: 100%;
+          max-height: 900px;
+          border: 7px solid #ff7701;
+          border-radius: 30px;
+        }
+        .exercise-description {
+          margin-top: 40px;
+          padding: 50px;
+          margin-bottom: 0;
+          border-radius: 30px;
+          font-size: 5.5rem;
+          border: 7px solid #eb964b;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div>
+    <h1>Залы: редактировать зал</h1>
+
+    <form role="form" name="myForm">
+        <div class= "form-group">
+            <label> Название зала </label>
+            <div>
+                <input name="gym_name" ng-model="gym.gym_name" class= "form-control" placeholder="Название зала" required/>
+                <span ng-show="myForm.gym_name.$dirty && myForm.gym_name.$invalid" class="help-inline">Название зала обязательно</span>
+            </div>
+        </div>
+        <a href="#/gyms/index" class="btn btn-default">Отмена</a>
+        <button ng-click="updateGym(gym);"
+                ng-disabled="isClean() || myForm.$invalid"
+                type="submit" class="btn btn-default">Выполнить</button>
+    </form>
+</div>

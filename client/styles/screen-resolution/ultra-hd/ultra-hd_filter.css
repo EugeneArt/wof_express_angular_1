@@ -1,0 +1,95 @@
+@media (min-width: 2560px) {
+  main .content .wrapper-filter-form {
+    min-height: 1790px;
+    width: 92%;
+  }
+  main .content .wrapper-filter-form .filter-form {
+    display: inline-block;
+    margin-top: 120px;
+    font-size: 5rem;
+    text-align: center;
+  }
+  main .content .wrapper-filter-form .filter-form form {
+    padding: 160px 70px 120px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 150px;
+  }
+  main .content .wrapper-filter-form .filter-form .form-group {
+    display: inline-block;
+    margin: 10px;
+  }
+  main .content .wrapper-filter-form .filter-form .form-group.day {
+    width: 360px;
+  }
+  main .content .wrapper-filter-form .filter-form .form-group.hour {
+    width: 300px;
+  }
+  main .content .wrapper-filter-form .filter-form .form-group.gym {
+    width: 680px;
+  }
+  main .content .wrapper-filter-form .filter-form .form-group.trainer {
+    width: 700px;
+  }
+  main .content .wrapper-filter-form .filter-form .form-group.exercise {
+    width: 600px;
+  }
+  main .content .wrapper-filter-form .filter-form .form-group.level {
+    width: 400px;
+  }
+  main .content .wrapper-filter-form .filter-form .form-group label {
+    padding-bottom: 20px;
+    font-size: 5rem;
+    font-style: italic;
+  }
+  main .content .wrapper-filter-form .filter-form .form-group select {
+    width: 100%;
+    height: 120px;
+    padding-left: 25px;
+    border: 4px solid #eb964b;
+    border-radius: 100px;
+    color: #eb964b;
+    font-size: 4.7rem;
+    font-style: italic;
+    font-weight: 700;
+  }
+  main .content .wrapper-filter-form .filter-form .form-group select option {
+    border-radius: 20px;
+    border: 2px solid red;
+  }
+  main .content .wrapper-filter-form .filter-form .filter-form_btn {
+    margin-top: 150px;
+  }
+  main .content .wrapper-filter-form .filter-form .filter-form_btn .btn {
+    margin: 30px;
+    padding: 30px 150px;
+    background: #eb964b;
+    border: 4px solid white;
+    border-radius: 100px;
+    color: white;
+    font-size: 6rem;
+  }
+  main .wrapper_filter {
+    display: inline-block;
+    height: 100%;
+    padding: 25px 50px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 30px;
+  }
+  main .wrapper_filter h3 {
+    font-size: 5.5rem;
+    font-weight: 700;
+    color: #eb964b;
+  }
+  main .wrapper_filter .filter {
+    font-size: 4rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  main .wrapper_filter .filter li {
+    color: #eb964b;
+  }
+  main .wrapper_filter .filter li span {
+    color: #fff;
+  }
+}

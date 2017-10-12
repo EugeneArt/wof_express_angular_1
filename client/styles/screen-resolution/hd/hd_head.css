@@ -1,0 +1,51 @@
+@media (min-width: 992px) {
+  nav .navbar-brand {
+    margin-left: 40px;
+  }
+  nav .navbar-brand svg {
+    width: 120px;
+    height: 100px;
+  }
+  nav .banner {
+    margin: 5px 20px;
+  }
+  nav .banner img {
+    max-width: 500px;
+    height: 110px;
+  }
+  nav .comment {
+    position: absolute;
+    top: 25px;
+    right: 5px;
+  }
+  nav .comment .btn-primary {
+    border: none;
+    border-radius: 8px;
+  }
+  nav .comment .btn-comment {
+    width: 220px;
+    height: 70px;
+    border-radius: 40px;
+    background: #eb964b;
+    font-size: 2rem;
+    line-height: 4rem;
+  }
+  nav .search {
+    position: absolute;
+    top: 25px;
+    right: 5px;
+    right: 235px;
+  }
+  nav .search .btn-primary {
+    border: none;
+    border-radius: 8px;
+  }
+  nav .search .btn-comment {
+    width: 220px;
+    height: 70px;
+    border-radius: 40px;
+    background: #eb964b;
+    font-size: 2rem;
+    line-height: 4rem;
+  }
+}

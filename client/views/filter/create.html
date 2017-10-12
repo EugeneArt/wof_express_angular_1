@@ -1,0 +1,98 @@
+<div class="wrapper-filter-form">
+    <h1>Поиск</h1>
+    <div class="back" ui-sref="site">
+        <span>Вернуться</span>
+        <i class="glyphicon glyphicon-share-alt"></i>
+    </div>
+    <div class="filter-form">
+        <form role="form" name="myForm">
+            <div class= "form-group day" ng-class="{error: myForm.day.$invalid}">
+                <label> День </label>
+                <div>
+                    <select name="day" id="day" ng-model="timetable.day">
+                        <option value="" disabled>Выбрать...</option>
+                        <option value="Понедельник">Понедельник</option>
+                        <option value="Вторник">Вторник</option>
+                        <option value="Среда">Среда</option>
+                        <option value="Четверг">Четверг</option>
+                        <option value="Пятница">Пятница</option>
+                        <option value="Суббота">Суббота</option>
+                        <option value="Воскресенье">Воскресенье</option>
+                    </select><br>
+                </div>
+            </div>
+            <div class="form-group hour" ng-class="{error: myForm.hour.$invalid}">
+                <label> Время </label>
+                <div>
+                    <select name="hour" id="hour" ng-model="timetable.hour">
+                        <option value="" disabled>Выбрать...</option>
+                        <option value="07:00">07:00</option>
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                        <option value="20:00">20:00</option>
+                        <option value="21:00">21:00</option>
+                        <option value="22:00">22:00</option>
+                        <option value="23:00">23:00</option>
+                    </select>
+                </div>
+            </div>
+            <div class= "form-group gym" ng-class="{error: myForm.gym.$invalid}">
+                <label> Зал </label>
+                <div>
+                    <select name="gym" id="gym" ng-model="timetable.gym_id">
+                        <option value="" disabled>Выбрать...</option>
+                        <option ng-repeat="gym in gyms" value="{{gym.id}},{{gym.gym_name}}">{{gym.gym_name}}</option>
+                        <span ng-show="myForm.gym_name.$dirty && myForm.gym_name.$invalid" class="help-inline">Занятие обязательно</span>
+                    </select>
+                </div>
+            </div>
+            <div class= "form-group trainer" ng-class="{error: myForm.trainer.$invalid}">
+                <label>Тренер</label>
+                <div>
+                    <select name="trainer" id="trainer" ng-model="timetable.trainer_id">
+                        <option value="" disabled>Выбрать...</option>
+                        <option ng-repeat="trainer in trainers" value="{{trainer.id}},{{trainer.trainer_name}}">{{trainer.trainer_name}}</option>
+                        <span ng-show="myForm.trainer_name.$dirty && myForm.trainer_name.$invalid" class="help-inline">Занятие обязательно</span>
+                    </select>
+                </div>
+            </div>
+            <div class= "form-group exercise" ng-class="{error: myForm.exercises.$invalid}">
+                <label>Занятие</label>
+                <div>
+                    <select name="exercise" id="exercise" ng-model="timetable.exercise_id">
+                        <option value="" disabled>Выбрать...</option>
+                        <option ng-repeat="exercise in exercises" value="{{exercise.id}},{{exercise.exercise_name}}">{{exercise.exercise_name}}</option>
+                        <span ng-show="myForm.exercises_name.$dirty && myForm.exercises_name.$invalid" class="help-inline">Занятие обязательно</span>
+                    </select>
+                </div>
+            </div>
+            <div class= "form-group level" ng-class="{error: myForm.levels.$invalid}">
+                <label>Cложность</label>
+                <div>
+                    <select name="level" id="level" ng-model="timetable.level_id">
+                        <option value="" disabled>Выбрать...</option>
+                        <option ng-repeat="level in levels" value="{{level.id}},{{level.level_name}}">{{level.level_name}}</option>
+                        <span ng-show="myForm.level_name.$dirty && myForm.level_name.$invalid" class="help-inline">Уровень сложности обязательно</span>
+                    </select>
+                </div>
+            </div>
+            <div class="filter-form_btn">
+                <a href="#/filter/index" class="btn">Отмена</a>
+                <button ng-click="getQuery(timetable);"
+                        ng-disabled="myForm.$invalid"
+                        type="submit" class="btn btn-default">Показать</button>
+            </div>
+
+        </form>
+    </div>
+</div>

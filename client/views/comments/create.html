@@ -1,0 +1,29 @@
+<div class="back" ui-sref="site">
+        <span>Вернуться</span>
+        <i class="glyphicon glyphicon-share-alt"></i>
+</div>
+<div class="wrapper">
+    <div class="comment">
+        <h1>Оставить отзыв</h1>
+        <form role="form" name="myForm">
+            <div class= "form-group comment-name" >
+                <label ng-class="{err: myForm.name.$invalid, succ: myForm.name.$valid}"> Имя </label>
+                <div>
+                    <input name="name" type="text" ng-model="comment.name" class= "form-control" placeholder="Введити ваше имя" ng-pattern="/^[a-zA-Z]*$/"  ng-minlength="2" required/>
+                </div>
+            </div>
+            <div class= "form-group" >
+                <label ng-class="{err: myForm.comment.$invalid, succ: myForm.comment.$valid}"> Отзыв </label>
+                <div>
+                    <textarea name="comment" type="text" ng-model="comment.comment" class= "form-control" placeholder="Оставте отзыв или пожелание" rows="8"  ng-minlength="5" ng-maxlength="1000" required></textarea>
+                </div>
+            </div>
+            <div class="comment-btns">
+                <a href="#/site/index" class="btn">Отмена</a>
+                <button ng-click="createComment(comment);"
+                        ng-disabled="myForm.$invalid"
+                        type="submit" class="btn">Отправить отзыв</button>
+            </div>
+        </form>
+    </div>
+</div>

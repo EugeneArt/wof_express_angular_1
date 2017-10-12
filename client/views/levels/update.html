@@ -1,0 +1,23 @@
+<div>
+    <h1>Уровень сложности: редактировать уровень сложности</h1>
+
+    <form role="form" name="myForm">
+        <div class= "form-group">
+            <label> Название уровня сложности </label>
+            <div class="level-name">
+                <input name="level_name" ng-model="level.level_name" class="form-control" placeholder="Введите название уровня сложности" required/>
+                <span ng-show="myForm.level_name.$dirty && myForm.level_name.$invalid" class="help-inline">Название обязательно</span>
+            </div>
+            <label> Изменить цвет </label>
+            <div class="level-input_color">
+
+                <input name="level_color" type="color" ng-model="level.level_color" class="form-control" placeholder="Введите название уровня сложности" required/>
+                <span ng-show="myForm.level_color.$dirty && myForm.level_color.$invalid" class="help-inline">Цвет обязателен</span>
+            </div>
+        </div>
+        <a href="#/levels/index" class="btn btn-default">Отмена</a>
+        <button ng-click="updateLevel(level);"
+                ng-disabled="isClean() || myForm.$invalid"
+                type="submit" class="btn btn-default">Выполнить</button>
+    </form>
+</div>

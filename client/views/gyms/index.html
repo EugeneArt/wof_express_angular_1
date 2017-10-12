@@ -1,0 +1,29 @@
+<div>
+    <h1>Редактировать залы</h1>
+    <p>
+        <a class="btn btn-primary" href="#/gyms/create">
+            <i class="glyphicon glyphicon-plus"></i> Добавить зал
+        </a>
+    </p>
+    <div >
+        <table class="table">
+            <thead>
+            <th>Зал</th>
+            <th style="width:200px;">Редактировать/Удалить</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="gym in gyms">
+                <td>{{gym.gym_name}}</td>
+                <td>
+                <a class="btn btn-primary btn-xs" href="#/gyms/update/{{gym.id}}">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </a>
+                <a class="btn btn-danger btn-xs" ng-click="deleteGym(gym.id)">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

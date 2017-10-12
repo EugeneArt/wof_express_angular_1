@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="back" ui-sref="site">
+        <span>Вернуться</span>
+        <i class="glyphicon glyphicon-share-alt"></i>
+    </div>
+    <h1 class="exercise_title">{{::exercise.exercise_name}} <span>{{::levels.levels_name}}</span></h1>
+    <div class="exercise-wrapper">
+        <div class="row ">
+            <div class="col-md-6 ">
+                <div class="exercise-slider">
+                    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                            <img ng-src="{{::slide.image}}" style="margin:auto;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <video  class="exercise-video" loop autoplay>
+                    <source src="{{::exercise.exercise_video}}" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="exercise-description ">
+                {{::exercise.exercise_description}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,31 @@
+<div>
+    <h1>Редактировать уровень сложности</h1>
+    <p>
+        <a class="btn btn-primary" href="#/levels/create">
+            <i class="glyphicon glyphicon-plus"></i> Добавить уровень сложности
+        </a>
+    </p>
+    <div >
+        <table class="table">
+            <thead>
+            <th>Уровень сложности</th>
+            <th>Цвет</th>
+            <th style="width:200px;">Редактировать/Удалить</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="level in levels">
+                <td>{{level.level_name}}</td>
+                <td> <div class="level-color" style="background: {{level.level_color}}"></div></td>
+                <td>
+                <a class="btn btn-primary btn-xs" href="#/levels/update/{{level.id}}">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </a>
+                <a class="btn btn-danger btn-xs" ng-click="deleteLevel(level.id)">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div>
+    <h1>Занятия: редактировать занятие</h1>
+
+    <form role="form" name="myForm">
+        <div class= "form-group">
+            <label> Занятие </label>
+            <div>
+                <input name="exercise_name" ng-model="exercise.exercise_name" class= "form-control" placeholder="ФИО" required/>
+                <span ng-show="myForm.exercise_name.$dirty && myForm.exercise_name.$invalid" class="help-inline">ФИО обязательны</span>
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.exercise_description.$invalid}">
+            <label> Описание занятия </label>
+            <div>
+                <textarea name="exercise_description"  ng-model="exercise.exercise_description" class= "form-control" placeholder="Введити описание" rows="12" required></textarea>
+                <span ng-show="myForm.exercise_description.$dirty && myForm.exercise_description.$invalid" class="help-inline">Описаеие обязательно</span>
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.exercise_video.$invalid}">
+            <label> Видео </label>
+            <div>
+                <input
+                        type="file"
+                        name="file"
+                        ngf-select
+                        ng-model="file"
+                        name="file"
+                        ngf-pattern="'video/*'"
+                        maxSize="600"
+                />
+                <video controls ngf-src="file" width="400" height="400"></video>
+                <i ng-show="form.file.$error.required">*required</i><br>
+                <i ng-show="form.file.$error.maxSize">File too large</i>
+                <p>{{form.progress}}</p>
+            </div>
+            <div>
+                <video width="320" height="240" controls>
+                    <source src="{{exercise.exercise_video}}" type="video/mp4" >
+                </video>
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.exercise_video.$invalid}">
+            <div>
+                <label> Изображения </label>
+                <input type="file"  name="files" ngf-select ng-model="files" multiple  accept="image/*"/>
+                <ul>
+                    <li ng-repeat="f in files" style="font:smaller">
+                        {{f.name}}
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div ng-repeat="image in exercise.arr_images" style="display: inline-block">
+                    <img src="/uploads/{{image}}" alt="" width="150px">
+                </div>
+            </div>
+        </div>
+
+        <a href="#/exercise/index" class="btn btn-default">Отмена</a>
+        <button ng-click="updateExercise(exercise);"
+                ng-disabled="isClean() || myForm.$invalid"
+                type="submit" class="btn btn-default">Выполнить</button>
+    </form>
+</div>

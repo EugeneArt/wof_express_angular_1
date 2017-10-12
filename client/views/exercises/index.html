@@ -1,0 +1,43 @@
+
+    <h1>Редактировать занятия</h1>
+    <p>
+        <a class="btn btn-primary" href="#/exercises/create">
+            <i class="glyphicon glyphicon-plus"></i> Добавить занятие
+        </a>
+    </p>
+    <div ng-show="exercises.length > 0">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <th>Занятия</th>
+                <th>Описание</th>
+                <th>Видео</th>
+                <th>Фотографии</th>
+                <th style="width:200px;">Редактировать/Удалить</th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="exercise in exercises">
+                    <td>{{::exercise.exercise_name}}</td>
+                    <td>{{::exercise.exercise_description}}</td>
+                    <td><video width="300" height="300" controls>
+                            <source ng-src="{{::exercise.exercise_video}}" type="video/mp4">
+                        </video>
+                    </td>
+                    <td>
+                        <div ng-repeat="image in exercise.exercise_images">
+                            <img ng-src="./uploads/thumbnails/{{::image}}" alt="" width="100px">
+                        </div>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-xs" href="#/exercises/update/{{::exercise.id}}">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </a>
+                        <a class="btn btn-danger btn-xs" ng-click="deleteExercise(exercise.id)">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

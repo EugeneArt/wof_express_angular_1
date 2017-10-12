@@ -1,0 +1,64 @@
+<div>
+    <h1>Расписание: редактирование расписания</h1>
+
+    <form role="form" name="myForm">
+        <div class= "form-group" ng-class="{error: myForm.day.$invalid}">
+            <label> День </label>
+            <div>
+                <select name="day" id="day" ng-model="timetable.day" required>
+                    <option value="Понедельник">Понедельник</option>
+                    <option value="Вторник">Вторник</option>
+                    <option value="Среда">Среда</option>
+                    <option value="Четверг">Четверг</option>
+                    <option value="Пятница">Пятница</option>
+                    <option value="Суббота">Суббота</option>
+                    <option value="Воскресенье">Воскресенье</option>
+                </select><br>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{error: myForm.hour.$invalid}">
+            <label> Время </label>
+            <div>
+                <input type="text" id="hour" name="hour" ng-model="timetable.hour" pattern="([01]?[0-9]{1}|2[0-3]{1}):[0-5]{1}[0-9]{1}"
+                       placeholder="ЧЧ:мм" min="00:00" max="23:00" required />
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.gym.$invalid}">
+            <label> Зал </label>
+            <div>
+                <select name="gym" id="gym" ng-options="gym.gym_name for gym in gyms track by gym.id" ng-model="timetable.gym" required>
+                    <span ng-show="myForm.gym_name.$dirty && myForm.gym_name.$invalid" class="help-inline">Занятие обязательно</span>
+                </select>
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.trainer.$invalid}">
+            <label>Тренер</label>
+            <div>
+                <select name="trainer" id="trainer" ng-options="trainer.trainer_name for trainer in trainers track by trainer.id" ng-model="timetable.trainer" required>
+                    <span ng-show="myForm.trainer_name.$dirty && myForm.trainer_name.$invalid" class="help-inline">Поле тренер обязательно</span>
+                </select>
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.exercises.$invalid}">
+            <label>Занятие</label>
+            <div>
+                <select name="exercise" id="exercise" ng-options="exercise.exercise_name for exercise in exercises track by exercise.id" ng-model="timetable.exercise" required>
+                    <span ng-show="myForm.exercises_name.$dirty && myForm.exercises_name.$invalid" class="help-inline">Занятие обязательно</span>
+                </select>
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.levels.$invalid}">
+            <label>Уровень сложности</label>
+                <div>
+                    <select name="level" id="level" ng-options="level.level_name for level in levels track by level.id" ng-model="timetable.level" required>
+                        <span ng-show="myForm.levels_name.$dirty && myForm.levels_name.$invalid" class="help-inline">Уровень сложности обязательно</span>
+                    </select>
+                </div>
+        </div>
+
+        <a href="#/timetable/index" class="btn btn-default">Отмена</a>
+        <button ng-click="updateTimetable(timetable);"
+                ng-disabled="isClean() || myForm.$invalid"
+                type="submit" class="btn btn-default">Выполнить</button>
+    </form>
+</div>

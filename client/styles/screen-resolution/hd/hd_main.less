@@ -1,0 +1,139 @@
+@media (min-width: 992px) {
+  @font-size-base: 16px;
+
+  main {
+    font-size: 16px;
+    .content {
+      .level-indicator {
+        font-size: 1.8rem;
+        .level-indicator_list {
+          list-style-type: none;
+          .level-indicator_item{
+            padding: 20px 15px;
+            color: #eb964b;
+            .level-indicator_item-circle {
+              width: 22px;
+              height: 22px;
+            }
+          }
+        }
+      }
+      #scroll-btn {
+        width: 55px;
+        height: 55px;
+
+        right: 27px;
+
+        font-size: 40px;
+      }
+      .back {
+        margin-top: 20px;
+        background: white;
+        padding: 10px 35px;
+        border-radius: 40px;
+        border: 2px solid #eb964b;
+        float: right;
+        font-size: 2rem;
+        line-height: 4rem;
+        font-weight: 700;
+      }
+      //if select tabs
+      .nav-pills {
+        li {
+          margin-bottom: -2px;
+          a {
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 30px;
+            margin: 5px 2px;
+            &:hover {
+              background: rgba(255, 255, 255, 0.7);
+           }
+          }
+        }
+      }
+      .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+        background: #eb964b;
+        border: none;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-style: solid;
+        border-width: 1px 1px 0 1px;
+        border-color: white;
+      }
+      //if select pills
+      .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+        padding: 15px;
+        background: white;
+        color: #eb964b;
+        border-radius: 30px;
+      }
+
+      table {
+        border-collapse: collapse;
+        border: 1px solid white;
+        text-align: center;
+        font-weight: 700;
+        font-style: italic;
+
+        caption {
+          margin-top: 10px;
+          border: 1px solid white;
+          border-bottom: none;
+          border-radius: 15px 15px 0 0;
+          background: #eb964b;
+          text-align: center;
+          font-size: 2.5rem;
+          color: #105fb6;
+          text-shadow: white 0 0 3px;
+        }
+
+        thead {
+          background: rgba(30,144,255,0.6);
+          color: white;
+          text-shadow: #105fb6 0 0 3px;
+          tr,td,th {
+            text-align: center;
+            vertical-align: middle;
+          }
+        }
+        th,td {
+          font-size: 1.5rem;
+          border: 1px solid white;
+        }
+        tbody>tr>td {
+          vertical-align: middle;
+          position: relative;
+        }
+        .hour {
+          font-size: 1.4rem;
+          color: #000;
+        }
+
+        .exercise {
+          span{
+            font-size: 2.2rem;
+          }
+        }
+        .trainer {
+          padding: 8px 0;
+          span {
+            text-decoration: none;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #eb964b;
+          }
+        }
+        .level-color_circle {
+          width: 15px;
+          height: 15px;
+          right: 5px;
+          top: 5px;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,51 @@
+<div>
+    <h1>Баннеры: добавить баннер</h1>
+    <form role="form" name="myForm">
+        <div class= "form-group" ng-class="{error: myForm.trainer_name.$invalid}">
+            <label> Название</label>
+            <div>
+                <input name="name" ng-model="banner.name" type="text" class="form-control" placeholder="Название баннера" required/>
+                <span ng-show="myForm.name.$dirty && myForm.name.$invalid" class="help-inline">Название обязательно</span>
+            </div>
+        </div>
+        <p>
+            <input
+                    type="file"
+                    name="file"
+                    ngf-select
+                    ng-model="file"
+                    name="file"
+                    ngf-pattern="'image/*'"
+                    accept="image/*"
+                    ngf-max-height="220"
+                    ngf-max-size="20MB"
+                    required
+            />
+        </p>
+        <div class="errors" >
+            <div class="alert alert-danger" ng-show="myForm.file.$error.maxHeight">
+                Высота банера не должна превышать 110px
+            </div>
+            <div class="alert alert-danger" ng-show="myForm.file.$error.maxWidth ">
+                Ширина банера не должна превышать 900px
+            </div>
+            <div class="alert alert-danger" ng-show="myForm.file.$error.maxSize">
+                Максимальный размер баннера не должен превышать 20Мб
+            </div>
+        </div>
+
+        <p>
+            <img style="width:250px;" ngf-thumbnail="file"/>
+        </p>
+
+        <p>{{form.progress}}</p>
+
+        <a href="#/banners/index" class="btn btn-default">Отмена</a>
+        <button ng-click="createBanner(banner)"
+                ng-disabled="myForm.$invalid"
+                type="submit" class="btn btn-default">Выполнить</button>
+    </form>
+
+
+
+</div>

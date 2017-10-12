@@ -1,0 +1,60 @@
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: white;
+  z-index: 1;
+  font-family: 'RobotoRegular', Arial, sans-serif;
+}
+nav {
+  margin-right: 40px;
+  height: 90px;
+  font-size: 2rem;
+}
+nav .navbar-brand {
+  margin-left: 40px;
+}
+nav .banner {
+  display: inline-block;
+  margin: 5px 50px;
+}
+nav .banner img {
+  width: 900px;
+  height: 110px;
+}
+nav .navbar-nav {
+  margin: 35px 0;
+}
+nav .comment {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+nav .comment .btn-primary {
+  border: none;
+  border-radius: 8px;
+  font-style: italic;
+}
+nav .comment .btn-comment {
+  padding: 15px 35px;
+  background: #eb964b;
+  font-size: 2rem;
+  font-weight: 700;
+}
+nav .search {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  right: 300px;
+}
+nav .search .btn-primary {
+  border: none;
+  border-radius: 8px;
+  font-style: italic;
+}
+nav .search .btn-comment {
+  padding: 15px 35px;
+  background: #eb964b;
+  font-size: 2rem;
+  font-weight: 700;
+}

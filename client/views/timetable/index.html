@@ -1,0 +1,42 @@
+
+<h1> Редактировать расписание</h1>
+<p>
+    <a class="btn btn-primary" href="#/timetable/create">
+        <i class="glyphicon glyphicon-plus"></i> Добавить
+    </a>
+</p>
+
+<div ng-show="timetables.length > 0">
+    <uib-tabset active="active" type="pills">
+        <uib-tab  index="$index + 1" ng-repeat="(groupName, group) in timetables | groupBy: 'gym.gym_name'" heading="{{groupName}}" disable="tab.disabled">
+            <table class="table">
+                <caption>{{groupName}}</caption>
+                <thead>
+                <td>Время</td>
+                <td ng-repeat="day in ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье']">{{day}}</td>
+                </thead>
+                <tbody>
+                <tr ng-repeat="hourGroup in group | groupBy: 'hour' | toArray: true | orderBy: '$key'">
+                    <td>{{hourGroup[0].hour}}</td>
+                    <td ng-repeat="i in ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье']">
+                        <div ng-repeat="(key, value) in hourGroup">
+                            <div ng-if="value.day === i">
+                                <div>{{value.hour}}</div>
+                                <div>{{value.exercise.exercise_name}}</div>
+                                <div>{{value.trainer.trainer_name}}</div>
+                                <div class="level-color_circle" style="background: {{value.level.level_color}}"></div>
+                                <a class="btn btn-primary btn-xs" href="#/timetable/update/{{value.id}}">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                </a>
+                                <a class="btn btn-danger btn-xs" ng-click="deleteTimetable(value.id)">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </uib-tab>
+    </uib-tabset>
+</div>

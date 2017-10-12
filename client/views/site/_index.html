@@ -1,0 +1,102 @@
+<div class="schedule" id="schedule">
+    <div id="scroll-btn" aria-hidden="true" ng-click="upDown()"></div>
+    <div ng-show="timetables.length > 0">
+        <div class="level-indicator" ng-show="levels.length > 0">
+            <ul class="level-indicator_list" ng-repeat="level in levels">
+                <li class="level-indicator_item"><div class="level-indicator_item-circle" style="background: {{::level.level_color}}"></div> <div class="level-indicator_item-text">{{::level.level_name}}</div></li>
+            </ul>
+        </div>
+        <uib-tabset active="active" type="pills">
+            <uib-tab index="0" ng-repeat="(groupName, group) in timetables | groupBy: 'gym.gym_name'" heading="{{::groupName}}"
+                     ng-click="hideAllGyms()"
+                     ng-if="::groupName == 'Большой зал аэробики'" >
+                <table class="table" ng-if="!active">
+                    <caption>{{::groupName}}</caption>
+                    <thead>
+                    <td>Время</td>
+                    <td ng-repeat="day in ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье']">{{::day}}</td>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="hourGroup in group | groupBy: 'hour' | toArray: true | orderBy: '$key'">
+                        <td>{{::hourGroup[0].hour}}</td>
+                        <td ng-repeat="i in ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье']">
+                            <div ng-repeat="(key, value) in hourGroup">
+                                <div ng-if="::value.day === i" class="cell">
+                                    <div class="hour">{{::value.hour}}</div>
+                                    <div class="exercise">
+                                        <a href="#/exercises/exercise/index/{{::value.exercise_id}}">{{::value.exercise.exercise_name}}</a>
+                                    </div>
+                                    <div class="trainer" >
+                                        <a href="#/trainers/trainer/index/{{::value.trainer_id}}">{{::value.trainer.trainer_name}}</a>
+                                    </div>
+                                    <div class="level-color_circle" style="background: {{::value.level.level_color}}"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </uib-tab>
+            <uib-tab index="1" heading="Все залы" ng-repeat="(groupName, group) in timetables | groupBy: 'gym.gym_name'"
+                     ng-click="showAllGyms()"
+                     ng-if="::groupName == 'Зал единоборств'"  style="float: right">
+                <table class="table" ng-repeat="(groupName, group) in timetables | groupBy: 'gym.gym_name'" ng-if="toggleAllGyms">
+                    <caption>{{::groupName}}</caption>
+                    <thead>
+                    <td>Время</td>
+                    <td ng-repeat="day in ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье']">{{::day}}</td>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="hourGroup in group | groupBy: 'hour' | toArray: true | orderBy: '$key'">
+                        <td>{{::hourGroup[0].hour}}</td>
+                        <td ng-repeat="i in ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье']">
+                            <div ng-repeat="(key, value) in hourGroup">
+                                <div ng-if="::value.day === i">
+                                    <div class="hour">{{::value.hour}}</div>
+                                    <div class="exercise">
+                                        <a href="#/exercises/exercise/index/{{::value.exercise_id}}">{{::value.exercise.exercise_name}}</a>
+                                    </div>
+                                    <div class="trainer" >
+                                        <a href="#/trainers/trainer/index/{{::value.trainer_id}}">{{::value.trainer.trainer_name}}</a>
+                                    </div>
+                                    <div class="level-color_circle" style="background: {{::value.level.level_color}}"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </uib-tab>
+            <uib-tab index="$index + 2" ng-repeat="(groupName, group) in timetables | groupBy: 'gym.gym_name'" heading="{{::groupName}}" disable="tab.disabled"
+                     ng-click="selectGym(group); hideAllGyms()"
+                     ng-if="::groupName !== 'Большой зал аэробики'" ng-init="$last && finished()">
+                <table class="table" >
+                    <caption>{{::groupName}}</caption>
+                    <thead>
+                        <td>Время</td>
+                        <td ng-repeat="day in ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье']">{{::day}}</td>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="hourGroup in group | groupBy: 'hour' | toArray: true | orderBy: '$key'">
+                            <td>{{::hourGroup[0].hour}}</td>
+                            <td ng-repeat="i in ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье']">
+                                <div ng-repeat="(key, value) in hourGroup">
+                                    <div ng-if="::value.day === i">
+                                        <div class="hour">{{::value.hour}}</div>
+                                        <div class="exercise">
+                                            <a href="#/exercises/exercise/index/{{::value.exercise_id}}">{{::value.exercise.exercise_name}}</a>
+                                        </div>
+                                        <div class="trainer" >
+                                            <a href="#/trainers/trainer/index/{{::value.trainer_id}}">{{::value.trainer.trainer_name}}</a>
+                                        </div>
+                                        <div class="level-color_circle" style="background: {{::value.level.level_color}}"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+</div>

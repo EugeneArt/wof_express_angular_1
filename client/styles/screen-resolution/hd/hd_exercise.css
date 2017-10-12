@@ -1,0 +1,58 @@
+@media (min-width: 992px) {
+  main .content {
+    border-radius: 30px;
+  }
+  main .content .exercise_title {
+    margin: 30px 0px 0px 20px;
+    font-size: 4rem;
+  }
+  main .content .exercise-wrapper {
+    min-height: 600px;
+    background: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 30px;
+  }
+  main .content .exercise-wrapper .exercise-slider .carousel {
+    min-height: 300px;
+  }
+  main .content .exercise-wrapper .exercise-slider .carousel .carousel-inner .text-center img {
+    min-height: 300px;
+    max-height: 300px;
+  }
+  main .content .exercise-wrapper .exercise-slider .carousel .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+    border: 1px solid #eb964b;
+  }
+  main .content .exercise-wrapper .exercise-slider .carousel .carousel-indicators li.active {
+    background: #eb964b;
+  }
+  main .content .exercise-wrapper .exercise-slider .carousel .carousel-control {
+    background: rgba(255, 119, 1, 0.4);
+  }
+  main .content .exercise-wrapper .exercise-slider .carousel .carousel-control .glyphicon {
+    color: #337ab7;
+    font-size: 1.5rem;
+  }
+  main .content .exercise-wrapper .exercise-slider .carousel .carousel-control.right {
+    border-radius: 0 40px 40px 0;
+  }
+  main .content .exercise-wrapper .exercise-slider .carousel .carousel-control.left {
+    border-radius: 40px 0 0 40px;
+  }
+  main .content .exercise-wrapper .exercise-video {
+    width: 100%;
+    max-height: 300px;
+    border: 7px solid #ff7701;
+    border-radius: 30px;
+  }
+  main .content .exercise-wrapper .exercise-description {
+    margin-top: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    font-size: 2rem;
+  }
+}

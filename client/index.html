@@ -1,0 +1,70 @@
+<!DOCTYPE html >
+<html ng-app="AngApp">
+<head>
+        <!-- CSS -->
+    <!--<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />-->
+    <!--<link rel="stylesheet" href="assets/bootstrap/css/bootstrap-theme.min.css" />-->
+    <!--<link rel="stylesheet" href="styles/main.css" />-->
+
+        <!-- Less -->
+    <link rel="stylesheet/less" href="assets/bootstrap-less/bootstrap/bootstrap.less" />
+    <link rel="stylesheet/less" href="styles/index.less" />
+
+        <!-- favicon.ico -->
+    <link rel="icon" type="image/png" href="images/favicon.ico"/>
+</head>
+<body ng-controller="index">
+
+        <!-- Modules -->
+    <script src="assets/angular/angular.js"></script>
+    <script src="assets/angular/angular-route.js"></script>
+    <script src="assets/angular/angular-resource.js"></script>
+    <script src="assets/angular/angular-filter.js"></script>
+    <script src="assets/angular/ui-bootstrap-tpls-2.4.0.min.js"></script>
+    <script src="assets/angular/angular-touch.min.js"></script>
+    <script src="assets/ng-file-upload/dist/ng-file-upload-shim.js"></script> <!-- for no html5 browsers support -->
+    <script src="assets/ng-file-upload/dist/ng-file-upload.js"></script>
+    <script src="assets/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="assets/angular-scroll/angular-scroll.js"></script>
+    <script src="assets/less/dist/less.js"></script>
+    <script src="node_modules/ng-lodash/build/ng-lodash.min.js"></script>
+        <!-- Controllers -->
+    <script src="app.js"></script>
+    <script src="controllers/main.js"></script>
+    <script src="controllers/timetable.js"></script>
+    <script src="controllers/trainers.js"></script>
+    <script src="controllers/exercises.js"></script>
+    <script src="controllers/gyms.js"></script>
+    <script src="controllers/levels.js"></script>
+    <script src="controllers/comments.js"></script>
+    <script src="controllers/banners.js"></script>
+    <script src="controllers/filter.js"></script>
+        <!-- Models -->
+    <script src="models/timetable.js"></script>
+    <script src="models/trainers.js"></script>
+    <script src="models/exercises.js"></script>
+    <script src="models/gyms.js"></script>
+    <script src="models/levels.js"></script>
+    <script src="models/comments.js"></script>
+    <script src="models/banners.js"></script>
+    <script src="models/filter.js"></script>
+        <!-- Routes -->
+    <script src="routes/comments.js"></script>
+    <script src="routes/exercises.js"></script>
+    <script src="routes/gyms.js"></script>
+    <script src="routes/main.js"></script>
+    <script src="routes/timetable.js"></script>
+    <script src="routes/trainers.js"></script>
+    <script src="routes/levels.js"></script>
+    <script src="routes/banners.js"></script>
+    <script src="routes/filter.js"></script>
+        <!-- Views -->
+    <header>
+        <div ui-view="nav"></div>
+    </header>
+    <main>
+        <div class="content" ui-view="main" autoscroll="false">
+        </div>
+    </main>
+</body>
+</html>

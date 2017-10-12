@@ -1,0 +1,72 @@
+<div class="schedule">
+    <div class="back" ui-sref="site">
+        <span>На главную</span>
+        <i class="glyphicon glyphicon-share-alt"></i>
+    </div>
+    <div ng-show="timetables.length == 0 || filter == undefined">
+        <div class="wrapper_filter">
+            <h1>По вашему запросу ничего не найдено!</h1>
+            <h3>Критерии поиска:</h3>
+            <ul class="filter" ng-repeat="(key, value) in filter">
+                <li class="filter-item" ng-if="::key == 'day'"><span>День:</span> {{::value}}</li>
+                <li class="filter-item" ng-if="::key == 'hour'"><span>Время:</span> {{::value}}</li>
+                <li class="filter-item" ng-if="::key == 'gym_id'"><span>Зал: </span>{{::value}}</li>
+                <li class="filter-item" ng-if="::key == 'trainer_id'"><span>Тренер:</span> {{::value}}</li>
+                <li class="filter-item" ng-if="::key == 'exercise_id'"><span>Занятие:</span> {{::value}}</li>
+                <li class="filter-item" ng-if="::key == 'level_id'"><span>Уровень сложности:</span> {{::value}}</li>
+            </ul>
+        </div>
+    </div>
+    <div ng-show="filter !== undefined">
+        <div class="wrapper_filter">
+            <h3>Критерии поиска:</h3>
+            <ul class="filter" ng-repeat="(key, value) in filter">
+                <li class="filter-item" ng-if="::key == 'day'"><span>День:</span> {{::value}}</li>
+                <li class="filter-item" ng-if="::key == 'hour'"><span>Время:</span> {{::value}}</li>
+                <li class="filter-item" ng-if="::key == 'gym_id'"><span>Зал: </span>{{::value}}</li>
+                <li class="filter-item" ng-if="::key == 'trainer_id'"><span>Тренер:</span> {{::value}}</li>
+                <li class="filter-item" ng-if="::key == 'exercise_id'"><span>Занятие:</span> {{::value}}</li>
+                <li class="filter-item" ng-if="::key == 'level_id'"><span>Уровень сложности:</span> {{::value}}</li>
+            </ul>
+        </div>
+        <div class="level-indicator" ng-show="levels.length > 0">
+            <ul class="level-indicator_list" ng-repeat="level in levels">
+                <li class="level-indicator_item"><div class="level-indicator_item-circle" style="background: {{level.level_color}}"></div> <div class="level-indicator_item-text">{{::level.level_name}}</div></li>
+            </ul>
+        </div>
+        <uib-tabset active="active" type="pills">
+            <uib-tab index="$index + 1"
+                     ng-repeat="(groupName, group) in timetables"
+                     heading="{{::groupName}}"
+                     ng-click="hideAllGyms()"
+                     ng-if="::groupName !== 'Большой зал аэробики'">
+                <table class="table" ng-if="!toggleAllGyms">
+                    <caption>{{::groupName}}</caption>
+                    <thead>
+                    <td>Время</td>
+                    <td ng-repeat="day in ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье']">{{::day}}</td>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="hourGroup in group | groupBy: 'hour' | toArray: true | orderBy: '$key'">
+                        <td>{{::hourGroup[0].hour}}</td>
+                        <td ng-repeat="i in ['Понедельник','Вторник','Среда','Четверг','Пятница','Суббота','Воскресенье']">
+                            <div ng-repeat="(key, value) in hourGroup">
+                                <div ng-if="::value.day === i">
+                                    <div class="hour">{{::value.hour}}</div>
+                                    <div class="exercise" ui-sref="exercises/exercise({exerciseId: {{::value.exercise_id}} })">
+                                        <span>{{::value.exercise.exercise_name}}</span>
+                                    </div>
+                                    <div class="trainer" ui-sref="trainers/trainer({trainerId: {{::value.trainer_id}} })">
+                                        <span>{{::value.trainer.trainer_name}}</span>
+                                    </div>
+                                    <div class="level-color_circle" style="background: {{::value.level.level_color}}"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+</div>

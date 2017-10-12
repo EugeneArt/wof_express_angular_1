@@ -1,0 +1,23 @@
+<div>
+    <h1>Оставленные отзывы</h1>
+    <div ng-show="comments.length > 0">
+        <table class="table">
+            <thead>
+            <th>Фамилия</th>
+            <th>Отзыв</th>
+            <th style="width:80px;">Удалить</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="comment in comments">
+                <td>{{::comment.name}}</td>
+                <td>{{::comment.comment}}</td>
+                <td>
+                    <a class="btn btn-danger btn-xs" ng-click="deleteComment(comment.id)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

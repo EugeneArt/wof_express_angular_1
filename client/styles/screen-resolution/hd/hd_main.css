@@ -1,0 +1,119 @@
+@media (min-width: 992px) {
+  main .content .level-indicator {
+    font-size: 1.5rem;
+  }
+  main .content .level-indicator .level-indicator_list {
+    list-style-type: none;
+  }
+  main .content .level-indicator .level-indicator_list .level-indicator_item {
+    padding: 20px;
+    color: #eb964b;
+  }
+  main .content .level-indicator .level-indicator_list .level-indicator_item .level-indicator_item-circle {
+    width: 20px;
+    height: 20px;
+  }
+  main .content #scroll-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 40px;
+  }
+  main .content .back {
+    margin-top: 20px;
+    background: white;
+    padding: 10px 35px;
+    border-radius: 40px;
+    border: 2px solid #eb964b;
+    float: right;
+    font-size: 2rem;
+    line-height: 4rem;
+    font-weight: 700;
+  }
+  main .content .nav-pills li {
+    margin-bottom: -2px;
+  }
+  main .content .nav-pills li a {
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    margin: 5px;
+  }
+  main .content .nav-pills li a:hover {
+    background: rgba(255, 255, 255, 0.7);
+  }
+  main .content .nav-tabs > li.active > a,
+  main .content .nav-tabs > li.active > a:focus,
+  main .content .nav-tabs > li.active > a:hover {
+    background: #eb964b;
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+    border-color: white;
+  }
+  main .content .nav-pills > li.active > a,
+  main .content .nav-pills > li.active > a:focus,
+  main .content .nav-pills > li.active > a:hover {
+    padding: 15px 20px;
+    background: white;
+    color: #eb964b;
+    border-radius: 30px;
+  }
+  main .content table {
+    border-collapse: collapse;
+    border: 1px solid white;
+    text-align: center;
+    font-weight: 700;
+    font-style: italic;
+  }
+  main .content table caption {
+    margin-top: 10px;
+    border: 1px solid white;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background: #eb964b;
+    text-align: center;
+    font-size: 3rem;
+    color: #105fb6;
+    text-shadow: white 0 0 3px;
+  }
+  main .content table thead {
+    background: rgba(30, 144, 255, 0.6);
+    color: white;
+    text-shadow: #105fb6 0 0 3px;
+  }
+  main .content table thead tr,
+  main .content table thead td,
+  main .content table thead th {
+    text-align: center;
+    vertical-align: middle;
+  }
+  main .content table th,
+  main .content table td {
+    font-size: 2rem;
+    border: 1px solid white;
+  }
+  main .content table tbody > tr > td {
+    vertical-align: middle;
+    position: relative;
+  }
+  main .content table .hour {
+    font-size: 1.8rem;
+    color: #000;
+  }
+  main .content table .exercise a {
+    font-size: 3rem;
+  }
+  main .content table .trainer {
+    padding: 8px 0;
+  }
+  main .content table .trainer a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #eb964b;
+  }
+}

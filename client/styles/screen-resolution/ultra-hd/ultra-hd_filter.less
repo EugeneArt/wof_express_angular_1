@@ -1,0 +1,105 @@
+@media (min-width: 2560px) {
+  main {
+    .content {
+      //create filter
+      .wrapper-filter-form {
+        min-height: 1790px;
+        width: 92%;
+        h1 {
+          font-size: 10rem;
+          margin: 70px 0 0 70px;
+        }
+        .filter-form {
+          display: inline-block;
+          margin-top: 120px;
+          font-size: 5rem;
+          text-align: center;
+          form {
+            padding: 160px 70px 120px;
+            background:  rgba(255,255,255,0.5);
+            border-radius: 150px;
+          }
+          .form-group {
+            display: inline-block;
+            margin: 10px;
+            &.day {
+              width: 360px;
+            }
+            &.hour {
+              width: 300px;
+            }
+            &.gym {
+              width: 680px;
+            }
+            &.trainer {
+              width: 700px;
+            }
+            &.exercise {
+              width: 600px;
+            }
+            &.level {
+              width: 400px;
+            }
+            label {
+              padding-bottom: 20px;
+              font-size: 5rem;
+              font-style: italic;
+            }
+            select {
+              width: 100%;
+              height: 120px;
+              padding-left: 25px;
+              border: 4px solid #eb964b;
+              border-radius: 100px;
+              color:  #eb964b;;
+              font-size: 4.7rem;
+              font-style: italic;
+              font-weight: 700;
+              option {
+                border-radius: 20px;
+                border: 2px solid red;
+              }
+            }
+          }
+          .filter-form_btn {
+            margin-top: 150px;
+            .btn {
+              margin: 30px;
+              padding: 30px 150px;
+              background: #eb964b;
+              border: 4px solid white;
+              border-radius: 100px;
+              color: white;
+              font-size: 6rem;
+            }
+          }
+        }
+      }
+    }
+    //index
+    .wrapper_filter {
+      display: inline-block;
+      height: 100%;
+      padding: 25px 50px;
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 30px;
+      h3{
+        font-size: 5.5rem;
+        font-weight: 700;
+        color: #eb964b;
+      }
+      .filter {
+        font-size: 4rem;
+        font-weight: 700;
+        font-style: italic;
+        li {
+          color: #eb964b;
+          span {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

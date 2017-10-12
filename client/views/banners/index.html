@@ -1,0 +1,35 @@
+<div>
+    <h1>Редактировать баннеры</h1>
+    <p>
+        <a class="btn btn-primary" href="#/banners/create">
+            <i class="glyphicon glyphicon-plus"></i> Добавить баннер
+        </a>
+    </p>
+    <div >
+        <table class="table">
+            <thead>
+            <th>Название баннера</th>
+            <th>Изображение баннера</th>
+            <th>Статус баннера</th>
+            <th style="width:200px;">Редактировать/Удалить</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="banner in banners">
+                <td>{{banner.name}}</td>
+                <td><img src="/uploads/{{banner.image_url}}" alt="{{banner.image_url}}" width="200px"></td>
+                <td>
+                    <a class="btn btn-xs" ng-click="changeToCurrent(banner.id)" ng-class="banner.is_used ? 'btn-primary' :'btn-danger' ">{{banner.is_used ? 'Используется' : 'Установить'}}</a>
+                </td>
+                <td>
+                <a class="btn btn-primary btn-xs" href="#/banners/update/{{banner.id}}">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </a>
+                <a class="btn btn-danger btn-xs" ng-click="deleteBanner(banner.id)">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
